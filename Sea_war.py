@@ -11,7 +11,7 @@ class Ui_Element_Uprav(object):
     def setupUi(self, Element_Uprav):
         Element_Uprav.setObjectName("Element_Uprav")
         self.label = QtWidgets.QLabel(Element_Uprav)
-        self.label.setGeometry(QtCore.QRect(220, 10, 271, 41))
+        self.label.setGeometry(QtCore.QRect(220, 10, 285, 41))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
@@ -99,7 +99,7 @@ class Ui_Rule_Play(object):
         _translate = QtCore.QCoreApplication.translate
         Rule_Play.setWindowTitle(_translate("Rule_Play", "Морской бой"))
         self.label.setText(_translate("Rule_Play", "Правила игры"))
-        self.label_2.setText(_translate("Rule_Play", "Принцип «Морского боя» очень прост — Случайным образом расставляются корабли на вашем поле, в зависимости от сложности, Easy - 12х12, Medium - 15x15, Hard - 18x18 и поле оппонента. Далее вы по очереди делаете «выстрелы», нажимая на те или иные координаты на поле оппонента — если попадаете по короблю оппонента на клетке, на которую вы нажали появляется крестик с соответствующим цветом корабля, розовый – однопалубный корабль, синий – двухпалубный корабль, зелёный – трёхпалубный корабль, жёлтый – четырёхпалубный корабль, если вы промахнулись на клетке, на которую вы нажали появляется кружочек чёрного цвета. Игра длиться до тех пор, пока кто-нибудь из игроков не подобьёт все корабли оппонента."))
+        self.label_2.setText(_translate("Rule_Play", "Принцип «Морского боя» очень прост — Случайным образом расставляются корабли на вашем поле, в зависимости от сложности, Easy - 12х12, Medium - 15x15, Hard - 18x18 и поле оппонента. Далее вы по очереди делаете «выстрелы», нажимая на те или иные клетки на поле оппонента — если попадаете по короблю оппонента на клетке, на которую вы нажали появляется крестик с соответствующим цветом корабля, розовый – однопалубный корабль, синий – двухпалубный корабль, зелёный – трёхпалубный корабль, жёлтый – четырёхпалубный корабль(в начале игры эта функция отключена, включить её можно поставив галочку которая находиться в самом низу посередине экрана), если вы промахнулись на клетке, на которую вы нажали появляется кружочек чёрного цвета. Игра длиться до тех пор, пока кто-нибудь из игроков не подобьёт все корабли оппонента."))
 
 class Ui_Slosnost(object):
     def setupUi(self, Slosnost):
@@ -332,8 +332,6 @@ if __name__ == '__main__':
                 four_palub=Label(tk,text="- Четырёхпалубный корабль")
                 four_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*11)
                 
-                #mb.showinfo(title="Производится расстановка", message="Подождите пожалуйста, производится расстановка кораблей")
-                
                 def Pole(offset_x=0):
                     for i in range(s_x+1):
                         pole.create_line(offset_x + step_x * i,0,offset_x + step_x * i,size_wn_y)
@@ -533,7 +531,7 @@ if __name__ == '__main__':
                             if check_winer1():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №2 (Все корабли противника Игрока №1 подбиты)!!!"
+                                winner = "Победа Игрока №2 (Все корабли Игрока №1 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
 
                     if ip_x >= s_x + 6 and ip_x <= s_x + s_x + 6 and ip_y < s_y and not hod_igroka: # второе игровое поле
@@ -543,7 +541,7 @@ if __name__ == '__main__':
                             if check_winer2():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №1 (Все корабли противника Игрока №2 подбиты)!!!"
+                                winner = "Победа Игрока №1 (Все корабли Игрока №2 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
                     mark_igrok(hod_igroka)    
 
@@ -627,8 +625,6 @@ if __name__ == '__main__':
 
                 enemy_ships1 = generate_enemy_ships()
                 enemy_ships2 = generate_enemy_ships()
-                
-                #mb.showinfo(title="Расстановка кораблей прошла успешно",message="Корабли расставлены \n Приятной игры")
                 
                 while running:
                     if running:
@@ -738,8 +734,6 @@ if __name__ == '__main__':
                 Yellow.place(x=size_wn_x+menu_x//5,y=step_y*14,width=15,height=15)
                 four_palub=Label(tk,text="- Четырёхпалубный корабль")
                 four_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*14)
-
-                #mb.showinfo(title="Производится расстановка", message="Подождите пожалуйста, производится расстановка кораблей")
 
                 def Pole(offset_x=0):
                     for i in range(s_x+1):
@@ -940,7 +934,7 @@ if __name__ == '__main__':
                             if check_winer1():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №2(Все корабли противника Игрока №1 подбиты)!!!"
+                                winner = "Победа Игрока №2(Все корабли Игрока №1 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
 
                     if ip_x >= s_x + 7 and ip_x <= s_x + s_x + 7 and ip_y < s_y and not hod_igroka: # второе игровое поле
@@ -950,7 +944,7 @@ if __name__ == '__main__':
                             if check_winer2():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №1 (Все корабли противника Игрока №2 подбиты)!!!"
+                                winner = "Победа Игрока №1 (Все корабли Игрока №2 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
                     mark_igrok(hod_igroka)    
 
@@ -1034,8 +1028,6 @@ if __name__ == '__main__':
 
                 enemy_ships1 = generate_enemy_ships()
                 enemy_ships2 = generate_enemy_ships()
-
-                #mb.showinfo(title="Расстановка кораблей прошла успешно",message="Корабли расставлены \n Приятной игры")
 
                 while running:
                     if running:
@@ -1145,8 +1137,6 @@ if __name__ == '__main__':
                 Yellow.place(x=size_wn_x+menu_x//5,y=step_y*17,width=15,height=15)
                 four_palub=Label(tk,text="- Четырёхпалубный корабль")
                 four_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*17)
-
-                #mb.showinfo(title="Производится расстановка", message="Подождите пожалуйста, производится расстановка кораблей")
 
                 def Pole(offset_x=0):
                     for i in range(s_x+1):
@@ -1347,7 +1337,7 @@ if __name__ == '__main__':
                             if check_winer1():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №2 (Все корабли противника Игрока №1 подбиты)!!!"
+                                winner = "Победа Игрока №2 (Все корабли Игрока №1 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
 
                     if ip_x >= s_x + 8 and ip_x <= s_x + s_x + 8 and ip_y < s_y and not hod_igroka: # второе игровое поле
@@ -1357,7 +1347,7 @@ if __name__ == '__main__':
                             if check_winer2():
                                 Clik_String1 = [[10 for i in range(s_y)] for i in range(s_x)]
                                 Clik_String2 = [[10 for i in range(s_y)] for i in range(s_x)]
-                                winner = "Победа Игрока №1 (Все корабли противника Игрока №2 подбиты)!!!"
+                                winner = "Победа Игрока №1 (Все корабли Игрока №2 подбиты)!!!"
                                 mb.showinfo(title='Победа', message=winner)
                     mark_igrok(hod_igroka)    
 
@@ -1441,8 +1431,6 @@ if __name__ == '__main__':
 
                 enemy_ships1 = generate_enemy_ships()
                 enemy_ships2 = generate_enemy_ships()
-
-                #mb.showinfo(title="Расстановка кораблей прошла успешно",message="Корабли расставлены \n Приятной игры")
 
                 while running:
                     if running:
