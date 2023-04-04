@@ -21,7 +21,7 @@ class Ui_Element_Uprav(object):
         self.btn_GLmenu.setGeometry(QtCore.QRect(0, 0, 75, 51))
         self.btn_GLmenu.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Projeck\\Proect/Стрелка влево.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("Стрелка влево.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_GLmenu.setIcon(icon)
         self.btn_GLmenu.setIconSize(QtCore.QSize(40, 40))
         self.btn_GLmenu.setObjectName("btn_GLmenu")
@@ -37,7 +37,7 @@ class Ui_Element_Uprav(object):
         self.label_2.setGeometry(QtCore.QRect(36, 160, 131, 201))
         self.label_2.setStyleSheet("")
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("d:\\Projeck\\Proect/Клик мыши.ico"))
+        self.label_2.setPixmap(QtGui.QPixmap("Клик мыши.ico"))
         self.label_2.setObjectName("label_2")
 
         self.retranslateUi(Element_Uprav)
@@ -64,7 +64,7 @@ class Ui_Rule_Play(object):
         self.btn_GLmenu.setGeometry(QtCore.QRect(0, 0, 75, 51))
         self.btn_GLmenu.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Projeck\\Proect/Стрелка влево.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("Стрелка влево.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.btn_GLmenu.setIcon(icon)
         self.btn_GLmenu.setIconSize(QtCore.QSize(40, 40))
         self.btn_GLmenu.setObjectName("pushButton")
@@ -138,7 +138,7 @@ class Ui_Slosnost(object):
         self.btn_GLmenu.setStyleSheet("")
         self.btn_GLmenu.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Projeck\\Proect/Стрелка влево"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("Стрелка влево"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_GLmenu.setIcon(icon)
         self.btn_GLmenu.setIconSize(QtCore.QSize(40, 40))
         self.btn_GLmenu.setObjectName("btn_GLmenu")
@@ -158,7 +158,7 @@ class Ui_GLMenu(object):
     def setupUi(self, GLMenu):
         GLMenu.setObjectName("GLMenu")
         self.label = QtWidgets.QLabel(parent=GLMenu)
-        self.label.setGeometry(QtCore.QRect(220, 10, 240, 41))
+        self.label.setGeometry(QtCore.QRect(250, 10, 260, 41))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
@@ -166,21 +166,21 @@ class Ui_GLMenu(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.btn_Igra = QtWidgets.QPushButton(GLMenu)
-        self.btn_Igra.setGeometry(QtCore.QRect(270, 200, 151, 31))
+        self.btn_Igra.setGeometry(QtCore.QRect(270, 200, 175, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.btn_Igra.setFont(font)
         self.btn_Igra.setObjectName("btn_Igra")
         self.btn_Rule_Play = QtWidgets.QPushButton(GLMenu)
-        self.btn_Rule_Play.setGeometry(QtCore.QRect(270, 240, 151, 31))
+        self.btn_Rule_Play.setGeometry(QtCore.QRect(270, 240, 175, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.btn_Rule_Play.setFont(font)
         self.btn_Rule_Play.setObjectName("brt_Rule_Play")
         self.btn_Element_Uprav = QtWidgets.QPushButton(GLMenu)
-        self.btn_Element_Uprav.setGeometry(QtCore.QRect(270, 280, 151, 31))
+        self.btn_Element_Uprav.setGeometry(QtCore.QRect(270, 280, 175, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -272,7 +272,7 @@ if __name__ == '__main__':
                 Clik_String2 = [[-1 for i in range(s_y)] for i in range(s_x)] #список куда мы кликнули
                 boom = [[0 for i in range(s_y)] for i in range(s_x)] #список попаданей по короблям
 
-                photo = PhotoImage(file='D:\Projeck\Proect\Sea_warr.png')
+                photo = PhotoImage(file='Sea_warr.png')
                 tk.iconphoto(False, photo)
 
                 #Истина - 2 игрок, ложно - 1 игрок
@@ -365,7 +365,7 @@ if __name__ == '__main__':
                     tk.destroy()
 
                 btn_GLmenu = Button(tk,text="Главное меню", command=GLmenu)
-                btn_GLmenu.place(x=size_wn_x + menu_x//3, y = 30)
+                btn_GLmenu.place(x=size_wn_x + menu_x//3-10, y = 30)
 
                 def Play_return():
                     global list_ids, Clik_String1, Clik_String2, boom, enemy_ships1, enemy_ships2
@@ -379,7 +379,7 @@ if __name__ == '__main__':
                     enemy_ships2 = generate_enemy_ships()
 
                 btn_return = Button(tk, text="Начать заново!", command=Play_return)
-                btn_return.place(x=size_wn_x + menu_x//3, y=70)
+                btn_return.place(x=size_wn_x + menu_x//3-13, y=70)
 
                 def show_enemy1():
                     for i in range (0, s_x):
@@ -392,7 +392,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play1 = Button(tk, text="Показать корабли Игрока №1", command=show_enemy1)
-                btn_ships_play1.place(x=size_wn_x + menu_x //4-15, y=110)
+                btn_ships_play1.place(x=size_wn_x + menu_x //6-15, y=110)
 
                 def show_enemy2():
                     for i in range (0, s_x):
@@ -405,7 +405,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play2 = Button(tk, text="Показать корабли Игрока №2", command=show_enemy2)
-                btn_ships_play2.place(x=size_wn_x + menu_x //4-15, y=150)
+                btn_ships_play2.place(x=size_wn_x + menu_x //6-15, y=150)
 
                 def draw_point(x,y):
                     global hod_igroka
@@ -676,7 +676,7 @@ if __name__ == '__main__':
                 Clik_String2 = [[-1 for i in range(s_y)] for i in range(s_x)] #список куда мы кликнули
                 boom = [[0 for i in range(s_y)] for i in range(s_x)] #список попаданей по короблям
 
-                photo = PhotoImage(file='D:\Projeck\Proect\Sea_warr.png')
+                photo = PhotoImage(file='Sea_warr.png')
                 tk.iconphoto(False, photo)
 
                 #Истина - 2 игрок, ложно - 1 игрок
@@ -719,21 +719,21 @@ if __name__ == '__main__':
                 tk.update()
 
                 Pink=Label(tk,text="",background="pink")
-                Pink.place(x=size_wn_x+menu_x//5,y=step_y*11,width=15,height=15)
+                Pink.place(x=size_wn_x+menu_x//7,y=step_y*11,width=15,height=15)
                 one_palub=Label(tk,text="- Однопалубный корабль")
-                one_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*11)
+                one_palub.place(x=size_wn_x+menu_x//5+10,y=step_y*11)
                 Blue=Label(tk,text="",background="blue")
-                Blue.place(x=size_wn_x+menu_x//5,y=step_y*12,width=15,height=15)
+                Blue.place(x=size_wn_x+menu_x//7,y=step_y*12,width=15,height=15)
                 two_palub=Label(tk,text="- Двухпалубный корабль")
-                two_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*12)
+                two_palub.place(x=size_wn_x+menu_x//5+10,y=step_y*12)
                 Green=Label(tk,text="",background="green")
-                Green.place(x=size_wn_x+menu_x//5,y=step_y*13,width=15,height=15)
+                Green.place(x=size_wn_x+menu_x//7,y=step_y*13,width=15,height=15)
                 three_palub=Label(tk,text="- Трёхпалубный корабль")
-                three_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*13)
+                three_palub.place(x=size_wn_x+menu_x//5+10,y=step_y*13)
                 Yellow=Label(tk,text="",background="yellow")
-                Yellow.place(x=size_wn_x+menu_x//5,y=step_y*14,width=15,height=15)
+                Yellow.place(x=size_wn_x+menu_x//7,y=step_y*14,width=15,height=15)
                 four_palub=Label(tk,text="- Четырёхпалубный корабль")
-                four_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*14)
+                four_palub.place(x=size_wn_x+menu_x//5+10,y=step_y*14)
 
                 def Pole(offset_x=0):
                     for i in range(s_x+1):
@@ -768,7 +768,7 @@ if __name__ == '__main__':
                     tk.destroy()
 
                 btn_GLmenu = Button(tk,text="Главное меню", command=GLmenu)
-                btn_GLmenu.place(x=size_wn_x + menu_x//3, y = 30)
+                btn_GLmenu.place(x=size_wn_x + menu_x//3.5, y = 30)
 
                 def Play_return():
                     global list_ids, Clik_String1, Clik_String2, boom, enemy_ships1, enemy_ships2
@@ -782,7 +782,7 @@ if __name__ == '__main__':
                     enemy_ships2 = generate_enemy_ships()
 
                 btn_return = Button(tk, text="Начать заново!", command=Play_return)
-                btn_return.place(x=size_wn_x + menu_x//3, y=70)
+                btn_return.place(x=size_wn_x + menu_x//3.6, y=70)
 
                 def show_enemy1():
                     for i in range (0, s_x):
@@ -795,7 +795,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play1 = Button(tk, text="Показать корабли Игрока №1", command=show_enemy1)
-                btn_ships_play1.place(x=size_wn_x + menu_x //4-15, y=110)
+                btn_ships_play1.place(x=size_wn_x + menu_x //8-13, y=110)
 
                 def show_enemy2():
                     for i in range (0, s_x):
@@ -808,7 +808,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play2 = Button(tk, text="Показать корабли Игрока №2", command=show_enemy2)
-                btn_ships_play2.place(x=size_wn_x + menu_x //4-15, y=150)
+                btn_ships_play2.place(x=size_wn_x + menu_x //8-13, y=150)
 
                 def draw_point(x,y):
                     global hod_igroka
@@ -1079,7 +1079,7 @@ if __name__ == '__main__':
                 Clik_String2 = [[-1 for i in range(s_y)] for i in range(s_x)] #список куда мы кликнули
                 boom = [[0 for i in range(s_y)] for i in range(s_x)] #список попаданей по короблям
 
-                photo = PhotoImage(file='D:\Projeck\Proect\Sea_warr.png')
+                photo = PhotoImage(file='Sea_warr.png')
                 tk.iconphoto(False, photo)
 
                 #Истина - 2 игрок, ложно - 1 игрок
@@ -1122,21 +1122,21 @@ if __name__ == '__main__':
                 tk.update()
 
                 Pink=Label(tk,text="",background="pink")
-                Pink.place(x=size_wn_x+menu_x//5,y=step_y*14,width=15,height=15)
+                Pink.place(x=size_wn_x+menu_x//7-15,y=step_y*14,width=15,height=15)
                 one_palub=Label(tk,text="- Однопалубный корабль")
-                one_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*14)
+                one_palub.place(x=size_wn_x+menu_x//5,y=step_y*14)
                 Blue=Label(tk,text="",background="blue")
-                Blue.place(x=size_wn_x+menu_x//5,y=step_y*15,width=15,height=15)
+                Blue.place(x=size_wn_x+menu_x//7-15,y=step_y*15,width=15,height=15)
                 two_palub=Label(tk,text="- Двухпалубный корабль")
-                two_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*15)
+                two_palub.place(x=size_wn_x+menu_x//5,y=step_y*15)
                 Green=Label(tk,text="",background="green")
-                Green.place(x=size_wn_x+menu_x//5,y=step_y*16,width=15,height=15)
+                Green.place(x=size_wn_x+menu_x//7-15,y=step_y*16,width=15,height=15)
                 three_palub=Label(tk,text="- Трёхпалубный корабль")
-                three_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*16)
+                three_palub.place(x=size_wn_x+menu_x//5,y=step_y*16)
                 Yellow=Label(tk,text="",background="yellow")
-                Yellow.place(x=size_wn_x+menu_x//5,y=step_y*17,width=15,height=15)
+                Yellow.place(x=size_wn_x+menu_x//7-15,y=step_y*17,width=15,height=15)
                 four_palub=Label(tk,text="- Четырёхпалубный корабль")
-                four_palub.place(x=size_wn_x+menu_x//5+20,y=step_y*17)
+                four_palub.place(x=size_wn_x+menu_x//5,y=step_y*17)
 
                 def Pole(offset_x=0):
                     for i in range(s_x+1):
@@ -1171,7 +1171,7 @@ if __name__ == '__main__':
                     tk.destroy()
 
                 btn_GLmenu = Button(tk,text="Главное меню", command=GLmenu)
-                btn_GLmenu.place(x=size_wn_x + menu_x//3, y = 30)
+                btn_GLmenu.place(x=size_wn_x + menu_x//4+10, y = 30)
 
                 def Play_return():
                     global list_ids, Clik_String1, Clik_String2, boom, enemy_ships1, enemy_ships2
@@ -1185,7 +1185,7 @@ if __name__ == '__main__':
                     enemy_ships2 = generate_enemy_ships()
 
                 btn_return = Button(tk, text="Начать заново!", command=Play_return)
-                btn_return.place(x=size_wn_x + menu_x//3, y=70)
+                btn_return.place(x=size_wn_x + menu_x//4+5, y=70)
 
                 def show_enemy1():
                     for i in range (0, s_x):
@@ -1198,7 +1198,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play1 = Button(tk, text="Показать корабли Игрока №1", command=show_enemy1)
-                btn_ships_play1.place(x=size_wn_x + menu_x //4-15, y=110)
+                btn_ships_play1.place(x=size_wn_x + menu_x //14, y=110)
 
                 def show_enemy2():
                     for i in range (0, s_x):
@@ -1211,7 +1211,7 @@ if __name__ == '__main__':
                                 list_ids.append(_id)
 
                 btn_ships_play2 = Button(tk, text="Показать корабли Игрока №2", command=show_enemy2)
-                btn_ships_play2.place(x=size_wn_x + menu_x //4-15, y=150)
+                btn_ships_play2.place(x=size_wn_x + menu_x //14, y=150)
 
                 def draw_point(x,y):
                     global hod_igroka
